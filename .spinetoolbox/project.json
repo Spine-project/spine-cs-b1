@@ -121,8 +121,8 @@
         "original": {
             "type": "Data Store",
             "description": "",
-            "x": 195.37313878360496,
-            "y": -113.28164555609294,
+            "x": 197.36508553083704,
+            "y": -120.74690460591052,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -140,8 +140,8 @@
         "reduced": {
             "type": "Data Store",
             "description": "",
-            "x": 217.01878694639015,
-            "y": 110.09108324133618,
+            "x": 219.01073369362223,
+            "y": 102.6258241915186,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -159,45 +159,54 @@
         "matpower_case": {
             "type": "Data Connection",
             "description": "",
-            "x": -382.82486712332843,
-            "y": -105.40911380147475,
-            "references": []
+            "x": -379.81681387056057,
+            "y": -105.76162731254172,
+            "references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case118.m"
+                }
+            ]
         },
         "matpower_to_csv": {
             "type": "Tool",
             "description": "",
-            "x": -164.38032965127977,
-            "y": -99.96072522895702,
+            "x": -162.3883829040477,
+            "y": -107.42598427877459,
             "specification": "mp_to_csv",
             "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/matpower_case/case118.m"
+                    "path": "data/case118.m"
                 }
-            ]
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
         },
         "reduce_model": {
             "type": "Tool",
             "description": "",
-            "x": -302.2549266287165,
-            "y": 110.92626672260775,
+            "x": -300.2629798814844,
+            "y": 103.46100767279017,
             "specification": "reduce_model",
             "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/matpower_case/case118.m"
+                    "path": "data/case118.m"
                 }
             ]
         },
         "reduced_mp_to_csv": {
             "type": "Tool",
             "description": "",
-            "x": -133.0894914262078,
-            "y": 115.95445956715528,
+            "x": -139.22639672326213,
+            "y": 124.74690460591052,
             "specification": "mp_to_csv",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -211,14 +220,14 @@
         "View 1": {
             "type": "View",
             "description": "",
-            "x": 381.82486712332854,
-            "y": -29.595809456409505
+            "x": 383.8168138705606,
+            "y": -37.06106850622709
         },
         "datapkg_to_spine": {
             "type": "Importer",
             "description": "",
-            "x": 20.932273399973653,
-            "y": -105.48462095219213,
+            "x": 22.92422014720573,
+            "y": -112.9498800020097,
             "specification": "matpower_dp_to_spine_opt",
             "cancel_on_error": false,
             "file_selection": [
@@ -226,9 +235,9 @@
                     {
                         "type": "path",
                         "relative": false,
-                        "path": "{datapackage.json}"
+                        "path": "{branch.csv}"
                     },
-                    true
+                    false
                 ],
                 [
                     {
@@ -242,7 +251,7 @@
                     {
                         "type": "path",
                         "relative": false,
-                        "path": "{branch.csv}"
+                        "path": "{gen.csv}"
                     },
                     false
                 ],
@@ -250,17 +259,17 @@
                     {
                         "type": "path",
                         "relative": false,
-                        "path": "{gen.csv}"
+                        "path": "{datapackage.json}"
                     },
-                    false
+                    true
                 ]
             ]
         },
         "reduced_datapkg_to_spine 1": {
             "type": "Importer",
             "description": "",
-            "x": 27.863906189894635,
-            "y": 117.28164555609297,
+            "x": 29.855852937126713,
+            "y": 109.81638650627539,
             "specification": "matpower_dp_to_spine_opt",
             "cancel_on_error": false,
             "file_selection": [
@@ -268,9 +277,9 @@
                     {
                         "type": "path",
                         "relative": false,
-                        "path": "{datapackage.json}"
+                        "path": "{branch.csv}"
                     },
-                    true
+                    false
                 ],
                 [
                     {
@@ -284,7 +293,7 @@
                     {
                         "type": "path",
                         "relative": false,
-                        "path": "{branch.csv}"
+                        "path": "{gen.csv}"
                     },
                     false
                 ],
@@ -292,9 +301,9 @@
                     {
                         "type": "path",
                         "relative": false,
-                        "path": "{gen.csv}"
+                        "path": "{datapackage.json}"
                     },
-                    false
+                    true
                 ]
             ]
         }

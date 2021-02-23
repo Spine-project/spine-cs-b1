@@ -1,0 +1,4 @@
+.spinetoolbox/items/*/output/
+original.sqlite
+reduced.sqlite
+*.csv
