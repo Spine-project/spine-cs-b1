@@ -1,0 +1,302 @@
+{
+    "project": {
+        "version": 5,
+        "name": "reduce_model",
+        "description": "",
+        "specifications": {
+            "Tool": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/reduce_model.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/mp_to_csv.json"
+                }
+            ],
+            "Importer": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/matpower_dp_to_spine_opt.json"
+                }
+            ]
+        },
+        "connections": [
+            {
+                "from": [
+                    "reduced",
+                    "right"
+                ],
+                "to": [
+                    "View 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_case",
+                    "bottom"
+                ],
+                "to": [
+                    "reduce_model",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "reduced_mp_to_csv",
+                    "right"
+                ],
+                "to": [
+                    "reduced_datapkg_to_spine 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "original",
+                    "right"
+                ],
+                "to": [
+                    "View 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "reduced_datapkg_to_spine 1",
+                    "right"
+                ],
+                "to": [
+                    "reduced",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "reduce_model",
+                    "right"
+                ],
+                "to": [
+                    "reduced_mp_to_csv",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "datapkg_to_spine",
+                    "right"
+                ],
+                "to": [
+                    "original",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_case",
+                    "right"
+                ],
+                "to": [
+                    "matpower_to_csv",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_to_csv",
+                    "right"
+                ],
+                "to": [
+                    "datapkg_to_spine",
+                    "left"
+                ]
+            }
+        ]
+    },
+    "items": {
+        "original": {
+            "type": "Data Store",
+            "description": "",
+            "x": 195.37313878360496,
+            "y": -113.28164555609294,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/original/original.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "reduced": {
+            "type": "Data Store",
+            "description": "",
+            "x": 217.01878694639015,
+            "y": 110.09108324133618,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/reduced/reduced.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "matpower_case": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -382.82486712332843,
+            "y": -105.40911380147475,
+            "references": []
+        },
+        "matpower_to_csv": {
+            "type": "Tool",
+            "description": "",
+            "x": -164.38032965127977,
+            "y": -99.96072522895702,
+            "specification": "mp_to_csv",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/matpower_case/case118.m"
+                }
+            ]
+        },
+        "reduce_model": {
+            "type": "Tool",
+            "description": "",
+            "x": -302.2549266287165,
+            "y": 110.92626672260775,
+            "specification": "reduce_model",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/matpower_case/case118.m"
+                }
+            ]
+        },
+        "reduced_mp_to_csv": {
+            "type": "Tool",
+            "description": "",
+            "x": -133.0894914262078,
+            "y": 115.95445956715528,
+            "specification": "mp_to_csv",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "path",
+                    "relative": false,
+                    "path": "{case118_reduced.m}"
+                }
+            ]
+        },
+        "View 1": {
+            "type": "View",
+            "description": "",
+            "x": 381.82486712332854,
+            "y": -29.595809456409505
+        },
+        "datapkg_to_spine": {
+            "type": "Importer",
+            "description": "",
+            "x": 20.932273399973653,
+            "y": -105.48462095219213,
+            "specification": "matpower_dp_to_spine_opt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{datapackage.json}"
+                    },
+                    true
+                ],
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{bus.csv}"
+                    },
+                    false
+                ],
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{branch.csv}"
+                    },
+                    false
+                ],
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{gen.csv}"
+                    },
+                    false
+                ]
+            ]
+        },
+        "reduced_datapkg_to_spine 1": {
+            "type": "Importer",
+            "description": "",
+            "x": 27.863906189894635,
+            "y": 117.28164555609297,
+            "specification": "matpower_dp_to_spine_opt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{datapackage.json}"
+                    },
+                    true
+                ],
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{bus.csv}"
+                    },
+                    false
+                ],
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{branch.csv}"
+                    },
+                    false
+                ],
+                [
+                    {
+                        "type": "path",
+                        "relative": false,
+                        "path": "{gen.csv}"
+                    },
+                    false
+                ]
+            ]
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "reduce_model",
+    "tooltype": "julia",
+    "includes": [
+        "reduce.jl"
+    ],
+    "description": "Takes a matpower.m file and produces an equivalent, reduced one by calling ReduceModel.call_rei()",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "*reduced.m"
+    ],
+    "cmdline_args": [],
+    "execute_in_work": false,
+    "includes_main_path": "../../.."
+}

@@ -1,0 +1,17 @@
+{
+    "name": "mp_to_csv",
+    "tooltype": "julia",
+    "includes": [
+        "mp_to_csv.jl"
+    ],
+    "description": "Reads a .m file in the matpower format and writes CSVs + datapackage.json.",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "datapackage.json",
+        "*.csv"
+    ],
+    "cmdline_args": [],
+    "execute_in_work": false,
+    "includes_main_path": "../../.."
+}

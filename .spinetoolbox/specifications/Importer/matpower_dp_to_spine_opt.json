@@ -1,0 +1,6 @@
+{
+    "name": "matpower_dp_to_spine_opt",
+    "item_type": "Importer",
+    "mapping": {},
+    "description": "Maps a \"matpower datapackage\" into SpineOpt format"
+}
