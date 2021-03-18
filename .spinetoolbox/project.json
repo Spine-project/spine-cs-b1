@@ -1,6 +1,6 @@
 {
     "project": {
-        "version": 5,
+        "version": 6,
         "name": "reduce_model",
         "description": "",
         "specifications": {
@@ -178,9 +178,8 @@
             "execute_in_work": false,
             "cmd_line_args": [
                 {
-                    "type": "path",
-                    "relative": true,
-                    "path": "data/case118.m"
+                    "type": "resource",
+                    "arg": "case118.m"
                 }
             ],
             "options": {
@@ -196,9 +195,8 @@
             "execute_in_work": false,
             "cmd_line_args": [
                 {
-                    "type": "path",
-                    "relative": true,
-                    "path": "data/case118.m"
+                    "type": "resource",
+                    "arg": "case118.m"
                 }
             ]
         },
@@ -211,9 +209,8 @@
             "execute_in_work": false,
             "cmd_line_args": [
                 {
-                    "type": "path",
-                    "relative": false,
-                    "path": "{case118_reduced.m}"
+                    "type": "resource",
+                    "arg": "*reduced.m"
                 }
             ]
         },
@@ -232,35 +229,11 @@
             "cancel_on_error": false,
             "file_selection": [
                 [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{branch.csv}"
-                    },
-                    false
+                    "datapackage.json",
+                    true
                 ],
                 [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{bus.csv}"
-                    },
-                    false
-                ],
-                [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{gen.csv}"
-                    },
-                    false
-                ],
-                [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{datapackage.json}"
-                    },
+                    "*.csv",
                     true
                 ]
             ]
@@ -274,35 +247,11 @@
             "cancel_on_error": false,
             "file_selection": [
                 [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{branch.csv}"
-                    },
-                    false
+                    "datapackage.json",
+                    true
                 ],
                 [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{bus.csv}"
-                    },
-                    false
-                ],
-                [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{gen.csv}"
-                    },
-                    false
-                ],
-                [
-                    {
-                        "type": "path",
-                        "relative": false,
-                        "path": "{datapackage.json}"
-                    },
+                    "*.csv",
                     true
                 ]
             ]
