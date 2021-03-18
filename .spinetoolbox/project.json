@@ -31,7 +31,7 @@
                     "right"
                 ],
                 "to": [
-                    "View 1",
+                    "Combined view",
                     "left"
                 ]
             },
@@ -51,7 +51,7 @@
                     "right"
                 ],
                 "to": [
-                    "reduced_datapkg_to_spine 1",
+                    "reduced_datapkg_to_spine",
                     "left"
                 ]
             },
@@ -61,13 +61,13 @@
                     "right"
                 ],
                 "to": [
-                    "View 1",
+                    "Combined view",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "reduced_datapkg_to_spine 1",
+                    "reduced_datapkg_to_spine",
                     "right"
                 ],
                 "to": [
@@ -214,7 +214,7 @@
                 }
             ]
         },
-        "View 1": {
+        "Combined view": {
             "type": "View",
             "description": "",
             "x": 383.8168138705606,
@@ -238,7 +238,7 @@
                 ]
             ]
         },
-        "reduced_datapkg_to_spine 1": {
+        "reduced_datapkg_to_spine": {
             "type": "Importer",
             "description": "",
             "x": 29.855852937126713,
