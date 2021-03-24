@@ -49,7 +49,10 @@ Getting started
 
    `Set the lower textbox "Using Julia home project" to <path to project reduce-model-demo>`
    
-8\. Click "Execute project" button in the GUI. A successful execution should result in something like below:
+7c\.  This should result in an outcome like below:
+   ![Use Julia Executable](images/use_julia_executable.png)
+   
+8\. Click "Execute project" button in the GUI. A successful execution should result in an outcome like below:
 
    ![Result of Execute Project](images/result_of_execute_project.png)
 
@@ -61,8 +64,8 @@ Getting started
 10\. Compare graphically the original and reduced model in the Spine DB Editor:	
    - In the Object tree window, right click on node
    - Click on the menu icon in the top right corner of Spine DB Editor, which will open a sub-menu
-   - From the sub-menu, select Graphical
-   - This should result in a view like below:
+   - From the sub-menu, select Graph
+   - This should result in an outcome like below:
 
 ![Result Graph](images/result_graph.png)   
 
