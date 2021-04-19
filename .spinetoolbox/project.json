@@ -31,7 +31,7 @@
                     "right"
                 ],
                 "to": [
-                    "View 1",
+                    "Combined view",
                     "left"
                 ]
             },
@@ -51,7 +51,7 @@
                     "right"
                 ],
                 "to": [
-                    "reduced_datapkg_to_spine 1",
+                    "reduced_datapkg_to_spine",
                     "left"
                 ],
                 "options": {
@@ -64,13 +64,13 @@
                     "right"
                 ],
                 "to": [
-                    "View 1",
+                    "Combined view",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "reduced_datapkg_to_spine 1",
+                    "reduced_datapkg_to_spine",
                     "right"
                 ],
                 "to": [
@@ -216,11 +216,11 @@
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "case118_reduced.m"
+                    "arg": "*reduced.m"
                 }
             ]
         },
-        "View 1": {
+        "Combined view": {
             "type": "View",
             "description": "",
             "x": 381.3168138705606,
@@ -240,7 +240,7 @@
                 ]
             ]
         },
-        "reduced_datapkg_to_spine 1": {
+        "reduced_datapkg_to_spine": {
             "type": "Importer",
             "description": "",
             "x": 27.355852937126713,
