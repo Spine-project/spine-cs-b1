@@ -5,140 +5,145 @@
         "table_mappings": {
             "bus": [
                 {
-                    "map_type": "ObjectClass",
-                    "skip_columns": [],
-                    "read_start_row": 0,
-                    "name": {
-                        "map_type": "constant",
-                        "reference": "node"
-                    },
-                    "parameters": {
-                        "map_type": "None"
-                    },
-                    "import_objects": true,
-                    "objects": {
-                        "map_type": "column",
-                        "reference": 0
-                    },
-                    "object_metadata": {
-                        "map_type": "None"
-                    },
-                    "mapping_name": "node"
+                    "node": {
+                        "mapping": [
+                            {
+                                "map_type": "ObjectClass",
+                                "position": "hidden",
+                                "value": "node"
+                            },
+                            {
+                                "map_type": "Object",
+                                "position": 0
+                            },
+                            {
+                                "map_type": "ObjectMetadata",
+                                "position": "hidden"
+                            }
+                        ]
+                    }
                 }
             ],
             "branch": [
                 {
-                    "map_type": "RelationshipClass",
-                    "skip_columns": [],
-                    "read_start_row": 0,
-                    "name": {
-                        "map_type": "constant",
-                        "reference": "connection__from_node"
-                    },
-                    "parameters": {
-                        "map_type": "None"
-                    },
-                    "import_objects": true,
-                    "objects": [
-                        {
-                            "map_type": "column",
-                            "reference": 0
-                        },
-                        {
-                            "map_type": "column",
-                            "reference": 1
-                        }
-                    ],
-                    "object_classes": [
-                        {
-                            "map_type": "constant",
-                            "reference": "connection"
-                        },
-                        {
-                            "map_type": "constant",
-                            "reference": "node"
-                        }
-                    ],
-                    "relationship_metadata": {
-                        "map_type": "None"
-                    },
-                    "mapping_name": "connection__from_node"
+                    "connection__from_node": {
+                        "mapping": [
+                            {
+                                "map_type": "RelationshipClass",
+                                "position": "hidden",
+                                "value": "connection__from_node"
+                            },
+                            {
+                                "map_type": "RelationshipClassObjectClass",
+                                "position": "hidden",
+                                "value": "connection"
+                            },
+                            {
+                                "map_type": "RelationshipClassObjectClass",
+                                "position": "hidden",
+                                "value": "node"
+                            },
+                            {
+                                "map_type": "Relationship",
+                                "position": "hidden",
+                                "value": "relationship"
+                            },
+                            {
+                                "map_type": "RelationshipObject",
+                                "position": 0,
+                                "import_objects": true
+                            },
+                            {
+                                "map_type": "RelationshipObject",
+                                "position": 1,
+                                "import_objects": true
+                            },
+                            {
+                                "map_type": "RelationshipMetadata",
+                                "position": "hidden"
+                            }
+                        ]
+                    }
                 },
                 {
-                    "map_type": "RelationshipClass",
-                    "skip_columns": [],
-                    "read_start_row": 0,
-                    "name": {
-                        "map_type": "constant",
-                        "reference": "connection__to_node"
-                    },
-                    "parameters": {
-                        "map_type": "None"
-                    },
-                    "import_objects": false,
-                    "objects": [
-                        {
-                            "map_type": "column",
-                            "reference": 0
-                        },
-                        {
-                            "map_type": "column",
-                            "reference": 2
-                        }
-                    ],
-                    "object_classes": [
-                        {
-                            "map_type": "constant",
-                            "reference": "connection"
-                        },
-                        {
-                            "map_type": "constant",
-                            "reference": "node"
-                        }
-                    ],
-                    "relationship_metadata": {
-                        "map_type": "None"
-                    },
-                    "mapping_name": "connection__to_node"
+                    "connection__to_node": {
+                        "mapping": [
+                            {
+                                "map_type": "RelationshipClass",
+                                "position": "hidden",
+                                "value": "connection__to_node"
+                            },
+                            {
+                                "map_type": "RelationshipClassObjectClass",
+                                "position": "hidden",
+                                "value": "connection"
+                            },
+                            {
+                                "map_type": "RelationshipClassObjectClass",
+                                "position": "hidden",
+                                "value": "node"
+                            },
+                            {
+                                "map_type": "Relationship",
+                                "position": "hidden",
+                                "value": "relationship"
+                            },
+                            {
+                                "map_type": "RelationshipObject",
+                                "position": 0
+                            },
+                            {
+                                "map_type": "RelationshipObject",
+                                "position": 2
+                            },
+                            {
+                                "map_type": "RelationshipMetadata",
+                                "position": "hidden"
+                            }
+                        ]
+                    }
                 }
             ],
             "gen": [
                 {
-                    "map_type": "RelationshipClass",
-                    "skip_columns": [],
-                    "read_start_row": 0,
-                    "name": {
-                        "map_type": "constant",
-                        "reference": "unit__to_node"
-                    },
-                    "parameters": {
-                        "map_type": "None"
-                    },
-                    "import_objects": true,
-                    "objects": [
-                        {
-                            "map_type": "column",
-                            "reference": 0
-                        },
-                        {
-                            "map_type": "column",
-                            "reference": 1
-                        }
-                    ],
-                    "object_classes": [
-                        {
-                            "map_type": "constant",
-                            "reference": "unit"
-                        },
-                        {
-                            "map_type": "constant",
-                            "reference": "node"
-                        }
-                    ],
-                    "relationship_metadata": {
-                        "map_type": "None"
-                    },
-                    "mapping_name": "unit__to_node"
+                    "unit__to_node": {
+                        "mapping": [
+                            {
+                                "map_type": "RelationshipClass",
+                                "position": "hidden",
+                                "value": "unit__to_node"
+                            },
+                            {
+                                "map_type": "RelationshipClassObjectClass",
+                                "position": "hidden",
+                                "value": "unit"
+                            },
+                            {
+                                "map_type": "RelationshipClassObjectClass",
+                                "position": "hidden",
+                                "value": "node"
+                            },
+                            {
+                                "map_type": "Relationship",
+                                "position": "hidden",
+                                "value": "relationship"
+                            },
+                            {
+                                "map_type": "RelationshipObject",
+                                "position": 0,
+                                "import_objects": true
+                            },
+                            {
+                                "map_type": "RelationshipObject",
+                                "position": 1,
+                                "import_objects": true
+                            },
+                            {
+                                "map_type": "RelationshipMetadata",
+                                "position": "hidden"
+                            }
+                        ]
+                    }
                 }
             ]
         },

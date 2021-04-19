@@ -1,13 +1,5 @@
 
 using InfrastructureModels
-using PyCall
-
-# To configure PyCall, as we already know...
-# ENV["PYTHON"] = "path/to/spinetoolbox/python (or actually, any python that has the datapackage module)"
-# Pkg.build("PyCall")
-# Restart julia
-
-dp = pyimport("datapackage")
 
 IM = InfrastructureModels
 
@@ -49,8 +41,3 @@ mp_data = open(file) do io
 		end
 	end
 end
-
-# write datapackage.json
-datapackage = dp.Package()
-datapackage.infer(joinpath(pwd(), "*.csv"))
-datapackage.save(joinpath(pwd(), "datapackage.json"))
