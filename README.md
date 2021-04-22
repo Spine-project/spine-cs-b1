@@ -69,4 +69,17 @@ Getting started
 
 ![Result Graph](images/result_graph.png)   
 
+
+License and Terms of Use
+------------------------
+
+The Spine Toolbox project example provided here can be used without any 
+limitations. 
+
+The IEEE 188-bus test case data (case118.m) is provided by the MATPOWER
+project and its use should be cited as:
+
+> R. D. Zimmerman, C. E. Murillo-Sanchez (2020). MATPOWER [Software]. 
+> Available: https://matpower.org doi: 10.5281/zenodo.3236535
+
    
