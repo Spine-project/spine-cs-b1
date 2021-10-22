@@ -1,10 +1,15 @@
 {
     "project": {
         "version": 6,
-        "name": "Spine ReduceModel.jl demo",
+        "name": "Matpower layouts",
         "description": "",
         "specifications": {
             "Tool": [
+                {
+                    "type": "path",
+                    "relative": false,
+                    "path": "/home/manuel/.spinetoolbox/plugins/SpineOpt/specifications/Tool/load_template.json"
+                },
                 {
                     "type": "path",
                     "relative": true,
@@ -14,6 +19,11 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Tool/mp_to_csv.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/load_template_without_input.json"
                 }
             ],
             "Importer": [
@@ -27,7 +37,83 @@
         "connections": [
             {
                 "from": [
-                    "reduced",
+                    "spine_data",
+                    "right"
+                ],
+                "to": [
+                    "Combined view",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "datapkg_to_spine",
+                    "right"
+                ],
+                "to": [
+                    "spine_data",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_case",
+                    "right"
+                ],
+                "to": [
+                    "matpower_to_csv",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_to_csv",
+                    "right"
+                ],
+                "to": [
+                    "datapkg_to_spine",
+                    "left"
+                ],
+                "options": {
+                    "use_datapackage": true
+                }
+            },
+            {
+                "from": [
+                    "matpower_case",
+                    "right"
+                ],
+                "to": [
+                    "matpower_to_csv 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_to_csv 1",
+                    "right"
+                ],
+                "to": [
+                    "datapkg_to_spine 1",
+                    "left"
+                ],
+                "options": {
+                    "use_datapackage": true
+                }
+            },
+            {
+                "from": [
+                    "datapkg_to_spine 1",
+                    "right"
+                ],
+                "to": [
+                    "spine_data 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "spine_data 1",
                     "right"
                 ],
                 "to": [
@@ -38,63 +124,73 @@
             {
                 "from": [
                     "matpower_case",
+                    "right"
+                ],
+                "to": [
+                    "matpower_to_csv 2",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_to_csv 2",
+                    "right"
+                ],
+                "to": [
+                    "datapkg_to_spine 2",
+                    "left"
+                ],
+                "options": {
+                    "use_datapackage": true
+                }
+            },
+            {
+                "from": [
+                    "datapkg_to_spine 2",
+                    "right"
+                ],
+                "to": [
+                    "spine_data 2",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "spine_data 2",
+                    "right"
+                ],
+                "to": [
+                    "Combined view",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Load template 1",
                     "bottom"
                 ],
                 "to": [
-                    "reduce_model",
+                    "spine_data",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "reduced_mp_to_csv",
-                    "right"
+                    "Load template 1",
+                    "bottom"
                 ],
                 "to": [
-                    "reduced_datapkg_to_spine",
-                    "left"
-                ],
-                "options": {
-                    "use_datapackage": true
-                }
-            },
-            {
-                "from": [
-                    "original",
-                    "right"
-                ],
-                "to": [
-                    "Combined view",
+                    "spine_data 1",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "reduced_datapkg_to_spine",
-                    "right"
+                    "Load template 1",
+                    "bottom"
                 ],
                 "to": [
-                    "reduced",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "reduce_model",
-                    "right"
-                ],
-                "to": [
-                    "reduced_mp_to_csv",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "datapkg_to_spine",
-                    "right"
-                ],
-                "to": [
-                    "original",
+                    "spine_data 2",
                     "left"
                 ]
             },
@@ -104,133 +200,171 @@
                     "right"
                 ],
                 "to": [
-                    "matpower_to_csv",
+                    "matpower_to_csv 3",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "matpower_to_csv",
+                    "matpower_to_csv 3",
                     "right"
                 ],
                 "to": [
-                    "datapkg_to_spine",
+                    "datapkg_to_spine 3",
                     "left"
                 ],
                 "options": {
                     "use_datapackage": true
                 }
+            },
+            {
+                "from": [
+                    "datapkg_to_spine 3",
+                    "right"
+                ],
+                "to": [
+                    "spine_data 3",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "spine_data 3",
+                    "right"
+                ],
+                "to": [
+                    "Combined view",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Load template 1",
+                    "bottom"
+                ],
+                "to": [
+                    "spine_data 3",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_case",
+                    "right"
+                ],
+                "to": [
+                    "matpower_to_csv 4",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "matpower_to_csv 4",
+                    "right"
+                ],
+                "to": [
+                    "datapkg_to_spine 4",
+                    "left"
+                ],
+                "options": {
+                    "use_datapackage": true
+                }
+            },
+            {
+                "from": [
+                    "datapkg_to_spine 4",
+                    "right"
+                ],
+                "to": [
+                    "spine_data 4",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Load template 1",
+                    "bottom"
+                ],
+                "to": [
+                    "spine_data 4",
+                    "left"
+                ]
             }
-        ]
+        ],
+        "jumps": []
     },
     "items": {
-        "original": {
-            "type": "Data Store",
-            "description": "",
-            "x": 194.86508553083704,
-            "y": -119.28170609356181,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/original/original.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
-        "reduced": {
-            "type": "Data Store",
-            "description": "",
-            "x": 216.51073369362223,
-            "y": 104.09102270386731,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/reduced/reduced.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
         "matpower_case": {
             "type": "Data Connection",
             "description": "",
-            "x": -382.31681387056057,
-            "y": -104.29642880019301,
+            "x": -415.3186294671954,
+            "y": 53.29566590846457,
             "references": [
                 {
                     "type": "path",
                     "relative": true,
                     "path": "data/case118.m"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case7d.m"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case12d.m"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case11d.m"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case10d.m"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case9d.m"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "data/case8d.m"
                 }
             ]
         },
         "matpower_to_csv": {
             "type": "Tool",
             "description": "",
-            "x": -164.8883829040477,
-            "y": -105.96078576642589,
+            "x": -181.03305713977298,
+            "y": -222.3637921219061,
             "specification": "mp_to_csv",
             "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "case118.m"
+                    "arg": "case7d.m"
                 }
             ],
             "options": {
                 "julia_sysimage": ""
             }
         },
-        "reduce_model": {
-            "type": "Tool",
-            "description": "",
-            "x": -302.7629798814844,
-            "y": 104.92620618513888,
-            "specification": "reduce_model",
-            "execute_in_work": false,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "case118.m"
-                }
-            ]
-        },
-        "reduced_mp_to_csv": {
-            "type": "Tool",
-            "description": "",
-            "x": -138.79599969856474,
-            "y": 123.28170609356182,
-            "specification": "mp_to_csv",
-            "execute_in_work": false,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "*reduced.m"
-                }
-            ]
-        },
         "Combined view": {
             "type": "View",
             "description": "",
-            "x": 381.3168138705606,
-            "y": -35.59586999387838
+            "x": 417.4952550184044,
+            "y": 89.40802431880294
         },
         "datapkg_to_spine": {
             "type": "Importer",
             "description": "",
-            "x": 20.42422014720573,
-            "y": -111.484681489661,
+            "x": -13.554447853380005,
+            "y": -230.32485033410344,
             "specification": "matpower_dp_to_spine_opt",
             "cancel_on_error": false,
             "file_selection": [
@@ -240,19 +374,254 @@
                 ]
             ]
         },
-        "reduced_datapkg_to_spine": {
+        "datapkg_to_spine 1": {
             "type": "Importer",
             "description": "",
-            "x": 27.355852937126713,
-            "y": 111.2815850186241,
+            "x": -7.87119539839388,
+            "y": -80.5697185412439,
             "specification": "matpower_dp_to_spine_opt",
             "cancel_on_error": false,
             "file_selection": [
                 [
-                    "datapackage@reduced_mp_to_csv",
+                    "datapackage@matpower_to_csv 1",
                     true
                 ]
             ]
+        },
+        "matpower_to_csv 1": {
+            "type": "Tool",
+            "description": "",
+            "x": -172.8044455286917,
+            "y": -76.51094541290753,
+            "specification": "mp_to_csv",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "case8d.m"
+                }
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
+        },
+        "spine_data": {
+            "type": "Data Store",
+            "description": "",
+            "x": 189.09127427409297,
+            "y": -221.17710055400659,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spine_data/spine_data.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "spine_data 1": {
+            "type": "Data Store",
+            "description": "",
+            "x": 172.54780649157357,
+            "y": -86.15654270594167,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spine_data_1/spine_data 1.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "Load template 1": {
+            "type": "Tool",
+            "description": "",
+            "x": 93.42858009997249,
+            "y": -328.470485793023,
+            "specification": "Load template without input",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@spine_data"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@spine_data 1"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@spine_data 2"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@spine_data 3"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@spine_data 4"
+                }
+            ]
+        },
+        "matpower_to_csv 2": {
+            "type": "Tool",
+            "description": "",
+            "x": -175.04310694648086,
+            "y": 71.14677252260145,
+            "specification": "mp_to_csv",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "case10d.m"
+                }
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
+        },
+        "datapkg_to_spine 2": {
+            "type": "Importer",
+            "description": "",
+            "x": -18.09165832191686,
+            "y": 90.15976074460309,
+            "specification": "matpower_dp_to_spine_opt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "datapackage@matpower_to_csv 2",
+                    true
+                ]
+            ]
+        },
+        "spine_data 2": {
+            "type": "Data Store",
+            "description": "",
+            "x": 174.29760883051227,
+            "y": 79.53712968655626,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spine_data_2/spine_data 2.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "matpower_to_csv 3": {
+            "type": "Tool",
+            "description": "",
+            "x": -178.94330178887375,
+            "y": 216.9416447381074,
+            "specification": "mp_to_csv",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "case11d.m"
+                }
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
+        },
+        "datapkg_to_spine 3": {
+            "type": "Importer",
+            "description": "",
+            "x": -11.374165702788716,
+            "y": 239.7926390985824,
+            "specification": "matpower_dp_to_spine_opt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "datapackage@matpower_to_csv 3",
+                    true
+                ]
+            ]
+        },
+        "spine_data 3": {
+            "type": "Data Store",
+            "description": "",
+            "x": 159.75246626205137,
+            "y": 214.01100690478444,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spine_data_3/spine_data 3.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "datapkg_to_spine 4": {
+            "type": "Importer",
+            "description": "",
+            "x": -2.832391325548535,
+            "y": 361.401119061159,
+            "specification": "matpower_dp_to_spine_opt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "datapackage@matpower_to_csv 4",
+                    true
+                ]
+            ]
+        },
+        "matpower_to_csv 4": {
+            "type": "Tool",
+            "description": "",
+            "x": -176.9964528567172,
+            "y": 349.89222299062976,
+            "specification": "mp_to_csv",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "case12d.m"
+                }
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
+        },
+        "spine_data 4": {
+            "type": "Data Store",
+            "description": "",
+            "x": 167.80963234775126,
+            "y": 352.86014362452863,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spine_data_4/spine_data 4.sqlite"
+                }
+            },
+            "cancel_on_error": true
         }
     }
 }
