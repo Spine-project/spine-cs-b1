@@ -1,5 +1,6 @@
 Spine Toolbox ReduceModel.jl demo
 =================================
+** This repository is archived and no longer maintained. You may run into issues.**
 
 This spine project "reduce-model-demo" demonstrates model reduction.
 
